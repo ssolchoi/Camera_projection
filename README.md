@@ -14,5 +14,9 @@ $ conda env create --prefix ./env --file environment.yml
 $ conda activate ./env
 $ jupyter notebook
 or
-$ python ./amin.py
+$ python ./refer.py
 ```
+
+## working on code
+
+$ pythin ./main.py

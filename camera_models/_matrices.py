@@ -83,4 +83,5 @@ def get_projection_matrix(
     K = get_calibration_matrix(f=f, px=px, py=py, mx=mx, my=my)
     R = get_rotation_matrix(theta_x=theta_x, theta_y=theta_y, theta_z=theta_z)
     P = K @ R @ np.c_[np.eye(3), -np.asarray(C)]
+    ##P = K @ R @ np.c_[np.eye(3), -np.asarray(C)]/P[2][3]
     return P
