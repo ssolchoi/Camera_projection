@@ -13,4 +13,6 @@ In order to use the notebook and library here, you must first create and activat
 $ conda env create --prefix ./env --file environment.yml
 $ conda activate ./env
 $ jupyter notebook
+or
+$ python ./amin.py
 ```
