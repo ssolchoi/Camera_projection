@@ -18,5 +18,7 @@ $ python ./refer.py
 ```
 
 ## working on code
+```bash
 
 $ pythin ./main.py
+```
