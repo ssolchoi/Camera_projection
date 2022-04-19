@@ -215,7 +215,7 @@ plt.tight_layout()
 plt.show()
 
 
-## Camera Calibration Matrix ##
+## Camera Calibration Matrix ##  <--
 F = 3.0  # focal length
 PX= 2.0  # principal point x-coordinate
 PY= 1.0  # principal point y-coordinate
