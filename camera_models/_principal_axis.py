@@ -14,7 +14,7 @@ class PrincipalAxis:
         self.camera_center = camera_center
         self.camera_dz = camera_dz
         self.f = f
-        self.p = camera_center + f * camera_dz
+        self.p = camera_center + f * camera_dz  ## ????
 
     def draw3d(
         self,

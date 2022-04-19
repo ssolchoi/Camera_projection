@@ -43,7 +43,7 @@ class ImagePlane:
         self.width = width
         self.mx = mx
         self.my = my
-        self.pi = get_plane_from_three_points(origin, origin + dx, origin + dy)
+        self.pi = get_plane_from_three_points(origin, origin + dx, origin + dy)  ## p1
 
     def draw3d(
         self, color: str = "tab:gray", alpha: float = 0.5, ax: Optional[Axes3D] = None

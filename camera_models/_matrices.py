@@ -9,6 +9,7 @@ def get_plucker_matrix(A: np.ndarray, B: np.ndarray) -> np.ndarray:
     A = to_homogeneus(A)
     B = to_homogeneus(B)
     L = A.reshape(-1, 1) * B.reshape(1, -1) - B.reshape(-1, 1) * A.reshape(1, -1)
+    ## L = CX^T + XC^T
     return L
 
 

@@ -31,7 +31,7 @@ def draw3d_arrow(
 def get_plane_from_three_points(
     X1: np.ndarray, X2: np.ndarray, X3: np.ndarray
 ) -> np.ndarray:
-    pi = np.hstack([np.cross(X1 - X3, X2 - X3), -X3 @ np.cross(X1, X2)])
+    pi = np.hstack([np.cross(X1 - X3, X2 - X3), -X3 @ np.cross(X1, X2)])  ## ????
     return pi
 
 
