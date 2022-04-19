@@ -24,21 +24,22 @@ IMAGE_WIDTH = 6
 
 
 ## each Camera setting ##
+## Camera 1
 THETA_X1 = np.pi / 2.0  # roll angle
 THETA_Y1 = 0.0  # pitch angle
 THETA_Z1 = np.pi  # yaw angle
 C1 = np.array([3, -5, 2])  # camera centre
-
+## Camera 2
 THETA_X2 = np.pi / 2.0  # roll angle
 THETA_Y2 = 0.0  # pitch angle
 THETA_Z2 = np.pi  # yaw angle
 C2 = np.array([3, 5, 2])  # camera centre
-
+## Camera 3
 THETA_X3 = np.pi / 2.0  # roll angle
 THETA_Y3 = 0.0  # pitch angle
 THETA_Z3 = np.pi  # yaw angle
 C3 = np.array([-3, -5, 2])  # camera centre
-
+## Camera 4
 THETA_X4 = np.pi / 2.0  # roll angle
 THETA_Y4 = 0.0  # pitch angle
 THETA_Z4 = np.pi  # yaw angle
@@ -49,21 +50,24 @@ C4 = np.array([-3, 5, 2])  # camera centre
 calibration_kwargs = {"f": FOCAL_LENGTH, "px": PX, "py": PY, "mx": MX, "my": MY}
 
 
-
+# Camera 1 : R and P Matrix
 rotation_kwargs1 = {"theta_x": THETA_X1, "theta_y": THETA_Y1, "theta_z": THETA_Z1}
 projection_kwargs1 = {**calibration_kwargs, **rotation_kwargs1, "C": C1}
 
+# Camera 2 : R and P Matrix
 rotation_kwargs2 = {"theta_x": THETA_X2, "theta_y": THETA_Y2, "theta_z": THETA_Z2}
 projection_kwargs2 = {**calibration_kwargs, **rotation_kwargs2, "C": C2}
 
+# Camera 3 : R and P Matrix
 rotation_kwargs3 = {"theta_x": THETA_X3, "theta_y": THETA_Y3, "theta_z": THETA_Z3}
 projection_kwargs3 = {**calibration_kwargs, **rotation_kwargs3, "C": C3}
 
+# Camera 4 : R and P Matrix
 rotation_kwargs4 = {"theta_x": THETA_X4, "theta_y": THETA_Y4, "theta_z": THETA_Z4}
 projection_kwargs4 = {**calibration_kwargs, **rotation_kwargs4, "C": C4}
 
 
-
+## Print Matrix
 K = get_calibration_matrix(**calibration_kwargs)
 print("Calibration matrix (K):\n", K.round(DECIMALS))
 
@@ -89,6 +93,7 @@ P4 = get_projection_matrix(**projection_kwargs4)
 print("\nProjection matrix (P_4):\n", P4.round(DECIMALS))
 
 
+## World coordinate axis
 dx, dy, dz = np.eye(3)
 world_frame = ReferenceFrame(
     origin=np.zeros(3),
@@ -98,7 +103,7 @@ world_frame = ReferenceFrame(
     name="World",
 )
 
-
+## camera 1 img plane
 camera_frame1 = ReferenceFrame(
     origin=C1,
     dx=R1 @ dx,
@@ -129,8 +134,7 @@ image_plane1 = ImagePlane(
 )
 
 
-
-
+## camera 2 img plane
 camera_frame2 = ReferenceFrame(
     origin=C2,
     dx=R2 @ dx,
@@ -161,7 +165,7 @@ image_plane2 = ImagePlane(
 )
 
 
-
+## camera 3 img plane
 camera_frame3 = ReferenceFrame(
     origin=C3,
     dx=R3 @ dx,
@@ -192,7 +196,7 @@ image_plane3 = ImagePlane(
 )
 
 
-
+## camera 4 img plane
 camera_frame4 = ReferenceFrame(
     origin=C4,
     dx=R4 @ dx,
@@ -223,6 +227,7 @@ image_plane4 = ImagePlane(
 )
 
 
+## world points and squares
 image = Image(heigth=IMAGE_HEIGTH, width=IMAGE_WIDTH)
 square1 = Polygon(np.array([
     [-1.0, 5.0, 4.0],
