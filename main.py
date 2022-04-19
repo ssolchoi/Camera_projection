@@ -109,7 +109,7 @@ camera_frame1 = ReferenceFrame(
     dx=R1 @ dx,
     dy=R1 @ dy,
     dz=R1 @ dz,
-    name="Camera",
+    name="Camera1",
 )
 Z1 = PrincipalAxis(
     camera_center=C1,
@@ -121,7 +121,7 @@ image_frame1 = ReferenceFrame(
     dx=R1 @ dx,
     dy=R1 @ dy,
     dz=R1 @ dz,
-    name="Image",
+    name="Image1",
 )
 image_plane1 = ImagePlane(
     origin=image_frame1.origin,
@@ -140,7 +140,7 @@ camera_frame2 = ReferenceFrame(
     dx=R2 @ dx,
     dy=R2 @ dy,
     dz=R2 @ dz,
-    name="Camera",
+    name="Camera2",
 )
 Z2 = PrincipalAxis(
     camera_center=C2,
@@ -152,7 +152,7 @@ image_frame2 = ReferenceFrame(
     dx=R2 @ dx,
     dy=R2 @ dy,
     dz=R2 @ dz,
-    name="Image",
+    name="Image2",
 )
 image_plane2 = ImagePlane(
     origin=image_frame2.origin,
@@ -171,7 +171,7 @@ camera_frame3 = ReferenceFrame(
     dx=R3 @ dx,
     dy=R3 @ dy,
     dz=R3 @ dz,
-    name="Camera",
+    name="Camera3",
 )
 Z3 = PrincipalAxis(
     camera_center=C3,
@@ -183,7 +183,7 @@ image_frame3 = ReferenceFrame(
     dx=R3 @ dx,
     dy=R3 @ dy,
     dz=R3 @ dz,
-    name="Image",
+    name="Image3",
 )
 image_plane3 = ImagePlane(
     origin=image_frame3.origin,
@@ -202,7 +202,7 @@ camera_frame4 = ReferenceFrame(
     dx=R4 @ dx,
     dy=R4 @ dy,
     dz=R4 @ dz,
-    name="Camera",
+    name="Camera4",
 )
 Z4 = PrincipalAxis(
     camera_center=C4,
@@ -214,7 +214,7 @@ image_frame4 = ReferenceFrame(
     dx=R4 @ dx,
     dy=R4 @ dy,
     dz=R4 @ dz,
-    name="Image",
+    name="Image4",
 )
 image_plane4 = ImagePlane(
     origin=image_frame4.origin,
