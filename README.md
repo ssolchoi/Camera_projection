@@ -9,7 +9,7 @@ This repository contains a notebook and a library to explain the operation of so
 
 In order to use the notebook and library here, you must first create and activate a virtual environment using Anaconda. If you have not yet installed Anaconda, you can do so by following [these](https://docs.anaconda.com/anaconda/install/) instructions. After that you just need to run the following commands:
 ```bash
-$ cd camera-models
+
 $ conda env create --prefix ./env --file environment.yml
 $ conda activate ./env
 $ jupyter notebook
