@@ -25,25 +25,25 @@ IMAGE_WIDTH = 6
 
 ## each Camera setting ##
 ## Camera 1
-THETA_X1 = np.pi / 2.0  # roll angle
+THETA_X1 = np.pi/2.0  # roll angle
 THETA_Y1 = 0.0  # pitch angle
 THETA_Z1 = np.pi/2  # yaw angle
-C1 = np.array([3, 0, 2])  # camera centre
+C1 = np.array([3, 0, 1])  # camera centre
 ## Camera 2
-THETA_X2 = np.pi / 2.0  # roll angle
+THETA_X2 = np.pi/2.0  # roll angle
 THETA_Y2 = 0.0  # pitch angle
 THETA_Z2 = np.pi  # yaw angle
-C2 = np.array([0, 3, 2])  # camera centre
+C2 = np.array([0, 3, 1])  # camera centre
 ## Camera 3
-THETA_X3 = np.pi / 2.0  # roll angle
+THETA_X3 = np.pi/2.0  # roll angle
 THETA_Y3 = 0.0  # pitch angle
 THETA_Z3 = -np.pi/2  # yaw angle
-C3 = np.array([-3, 0, 2])  # camera centre
+C3 = np.array([-3, 0, 1])  # camera centre
 ## Camera 4
-THETA_X4 = np.pi / 2.0  # roll angle
+THETA_X4 = np.pi/2.0  # roll angle
 THETA_Y4 = 0.0  # pitch angle
-THETA_Z4 = 0  # yaw angle
-C4 = np.array([0, -3, 2])  # camera centre
+THETA_Z4 = 0 # yaw angle
+C4 = np.array([0, -3, 1])  # camera centre
 
 
 
@@ -230,6 +230,7 @@ image_plane4 = ImagePlane(
 ## world points and squares
 image = Image(heigth=IMAGE_HEIGTH, width=IMAGE_WIDTH)
 
+
 square1 = Polygon(np.array([
     [6.0, 2.0, 0.0],
     [10.0, 2.0, 0.0],
@@ -256,36 +257,38 @@ square4 = Polygon(np.array([
 ]))
 
 
+
+
 # visualization
 fig = plt.figure(figsize=(10, 10))
 ax = fig.gca(projection="3d")
 
 world_frame.draw3d()
 
-camera_frame1.draw3d()
+# camera_frame1.draw3d()
 # image_frame1.draw3d()  ## image axis
 # Z1.draw3d()
 # image_plane1.draw3d()  ## image plane
 
-camera_frame2.draw3d()
+# camera_frame2.draw3d()
 # image_frame2.draw3d()
 # Z2.draw3d()
 # image_plane2.draw3d()
 
-camera_frame3.draw3d()
+# camera_frame3.draw3d()
 # image_frame3.draw3d()
 # Z3.draw3d()
 # image_plane3.draw3d()
 
 
-camera_frame4.draw3d()
+# camera_frame4.draw3d()
 # image_frame4.draw3d()
 # Z4.draw3d()
 # image_plane4.draw3d()
 
-square1.draw3d(pi=image_plane1.pi, C=C1, color="tab:purple")
+square1.draw3d(pi=image_plane1.pi, C=C1)
 square2.draw3d(pi=image_plane2.pi, C=C2, color="tab:purple")
-square3.draw3d(pi=image_plane3.pi, C=C3, color="tab:purple")
+square3.draw3d(pi=image_plane3.pi, C=C3)
 square4.draw3d(pi=image_plane4.pi, C=C4, color="tab:purple")
 
 
@@ -294,10 +297,11 @@ ax.set_title("Camera Geometry")
 plt.tight_layout()
 plt.show()
 
+
 fig = plt.figure(1,figsize=(IMAGE_WIDTH, IMAGE_HEIGTH))
 ax = fig.gca()
 image.draw()
-square1.draw(**projection_kwargs1, color="tab:purple")
+square1.draw(**projection_kwargs1)
 ax.set_title("Projection of Squares in the Image_1")
 plt.tight_layout()
 plt.show()
@@ -313,7 +317,7 @@ plt.show()
 fig = plt.figure(3,figsize=(IMAGE_WIDTH, IMAGE_HEIGTH))
 ax = fig.gca()
 image.draw()
-square3.draw(**projection_kwargs3, color="tab:purple")
+square3.draw(**projection_kwargs3)
 ax.set_title("Projection of Squares in the Image_3")
 plt.tight_layout()
 plt.show()
