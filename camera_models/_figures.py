@@ -90,7 +90,7 @@ class Polygon:
         theta_z: float = 0.0,
         mx: float = 1.0,
         my: float = 1.0,
-        s: float = 20.0,
+        s: float = 0.0,
         color: str = "tab:green",
         closed: bool = True,
         ax: Optional[plt.Axes] = None,
